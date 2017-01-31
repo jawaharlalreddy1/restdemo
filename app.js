@@ -9,12 +9,10 @@ var port = process.env.port || 3000
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-prodRouter = require('./Routes/prodRoutes')()
+prodRouter = require('./routes')()
 app.use('/rest', prodRouter)
 
-app.get('/', function (req, res) {
-  res.send('Welcome to my api')
-})
+
 
 app.listen(port, function () {
   console.log('gulp is running on my port :' + port)
