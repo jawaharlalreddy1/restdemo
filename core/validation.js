@@ -1,6 +1,6 @@
 var request = require('request')
 
-exports.validate = function (req, response) {
+exports.validate = function (req, response, cb) {
   // Business Description vlaidaiton
   if (!req.body.Content.BusinessDescription)
     response.error.push('Business descr can not be null')
@@ -35,6 +35,7 @@ exports.validate = function (req, response) {
       response.error.push('URL not Reachable, not able to ping given Destination URL')
       console.log('URL not Reachable/ not able to ping given Destination URL')
     }
+    cb(response.error);
   })
   console.timeEnd('startTime')
 
