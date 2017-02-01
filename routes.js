@@ -2,18 +2,14 @@
 
 var express = require('express')
 
-var prdInst = require('./bean/ProductInstance')
-var msgs = require('./core/httpMessages')
-var validations = require('./core/validation')
-
+var prdInst = require('./lib/product-instance')
+var msgs = require('./lib/httpMessages')
+var validations = require('./lib/validation')
 var productApi = require('./api/product');
 
 var routes = function () {
-
-  var prodRouter = express.Router()
-
+var prodRouter = express.Router()
   productApi(prodRouter);
-
   return prodRouter
 }
 

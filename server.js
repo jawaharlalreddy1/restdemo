@@ -1,6 +1,6 @@
 var http = require('http');
-var prdInst = require('./bean/ProductInstance');
-var settings = require('./core/settings')
+var prdInst = require('./lib/product-instance');
+var settings = require('./lib/settings')
 var prodroutes = require('./Routes/prodRoutes')
 var validation = require('./core/validation');
 
